@@ -1,155 +1,21 @@
-/* Basic reset */
-* { box-sizing: border-box; }
-
-/* Spacing scale (use consistently) */
-:root {
-  --space-xs: 6px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 20px;
-  --space-xl: 28px;
-  --container-max: 940px;
-}
-
-/* Page background and font */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg,#eaf2ff 0%,#ffffff 100%);
-  color: #222;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.45;
-}
-
-/* Center the main container and give it a card look */
-.container {
-  max-width: var(--container-max);
-  margin: 40px auto; /* larger breathing room around the card */
-  background: rgba(255,255,255,0.95);
-  padding: var(--space-xl);
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(25, 40, 80, 0.08);
-}
-
-h1 {
-  margin: 0 0 var(--space-lg) 0;
-  font-size: 2.0rem;
+.logo {
+  font-size: 18vw;              /* ~70% width */
+  font-family: "Impact", "Arial Black", sans-serif;
   text-align: center;
-}
+  margin: 10px 0;
 
-/* Menu: center horizontally and style links */
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  margin: var(--space-sm) 0 var(--space-lg) 0;
-  align-items: center;
-}
+  background: url("texture.gif"); /* or .jpg */
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 
-.menu a {
-  display: inline-block;
-  text-decoration: none;
-  color: #1a73e8;
-  background: rgba(26, 115, 232, 0.08);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.15s ease, transform 0.12s ease;
+  text-shadow:
+    4px 4px 0 #000,
+    -2px -2px 0 #ff00ff;
 }
-
-.menu a:hover {
-  background: rgba(26, 115, 232, 0.14);
-  transform: translateY(-2px);
+.logo:hover {
+  text-shadow:
+    6px 6px 0 #000,
+    -3px -3px 0 #ff00ff;
 }
-
-/* Panels: left align text but keep nice spacing */
-.panel {
-  text-align: left;
-  padding: var(--space-md) var(--space-lg);
-  margin-top: var(--space-md);
-  border-radius: 8px;
-  background: rgba(240, 247, 255, 0.6);
-  border: 1px solid rgba(26, 115, 232, 0.06);
-}
-
-.panel h2 {
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-}
-
-p {
-  margin: 0 0 var(--space-md) 0;
-}
-
-/* extra separation between stacked panels */
-.panel + .panel {
-  margin-top: var(--space-lg);
-}
-
-/* small accessibility improvement: visible focus */
-.menu a:focus,
-.login-box input:focus,
-.login-box button:focus {
-  outline: 3px solid rgba(26,115,232,0.12);
-  outline-offset: 2px;
-}
-
-/* Right align only the login link on larger screens (optional) */
-.menu .login-link {
-  /* remove manual offsets; spacing is handled by gap on the menu */
-  margin-left: 0;
-  color: #fff;
-  background-color: #1a73e8;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 6px;
-}
-
-/* Make layout responsive: stack menu items on narrow screens */
-@media (max-width: 500px) {
-  .menu { flex-direction: column; gap: var(--space-sm); }
-  .container { margin: 18px 16px; padding: var(--space-lg); }
-}
-
-/* Login page basic center placement */
-body.login-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(180deg,#f5f7fb 0%,#eaf2ff 100%);
-}
-
-.login-box {
-  width: 320px;
-  background: white;
-  padding: var(--space-lg);
-  border-radius: 10px;
-  box-shadow: 0 8px 28px rgba(25,40,80,0.08);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.login-box input {
-  padding: 8px 10px;
-  border: 1px solid #e3e7ee;
-  border-radius: 6px;
-  margin-bottom: var(--space-sm);
-}
-
-.login-box button {
-  background: #1a73e8;
-  color: #fff;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.login-box h2 {
-  margin: 0 0 var(--space-md) 0;
-}
-
-.login-box button:hover { opacity: 0.95; transform: translateY(-1px); }

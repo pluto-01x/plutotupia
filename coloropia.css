@@ -1,14 +1,14 @@
 .logo {
-  font-size: 12vw;             /* ~70% width */
-  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 4vw;             /* ~70% width */
+  font-family: 'Press Start 2P', monospace;
   text-align: center;
-  margin: 10px 0;
+  margin: 120px 0;
 
-  background: url("texture.gif"); /* or .jpg */
+  background: url("gifs/stars\ texture.gif"); /* or .jpg */
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: lime;
 
   text-shadow:
     4px 4px 0 #000,
@@ -18,4 +18,49 @@
   text-shadow:
     6px 6px 0 #000,
     -3px -3px 0 #ff00ff;
+}
+/* Page textured background using GIF from /gifs */
+body {
+  min-height: 100vh;
+  background-image: url("gifs/background stars.gif") ;
+  background-repeat: repeat; /* tile for texture */
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #000; /* fallback color */
+}
+
+/* Optional subtle overlay to improve text contrast */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure main content appears above the background overlay */
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.page-intro {
+  display: block;
+  width: 389px;
+  max-width: 90%;
+  height: auto;
+  margin: 12px auto 0;
+}
+.intro {
+  width: 100%;
+  padding: 0 0 20px;
+  margin-top: 80px;
+  text-align: center;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
 }

@@ -13,17 +13,78 @@
 		<div class="intro">
 			<img src="png/intro.png" alt="Welcome to Plutotupia" class="page-intro">
 		</div>
+		<div class="welcome"> 
+			<p> welcome to Plutotupia <br> the place where everyone can be free to do whaterver they want , this website is <br> still under construction but it will be ready soon <br> check the the feedback corner below to give me your ideas or just email  me </p>
+		</div>
 
 
-		<nav>
+		<nav class="solar">
+			<a class="mercury" href="/planets/mercury.html">Mercury</a>
+  			<a class="venus" href="/planets/venus.html">Venus</a>
+ 			<a class="earth" href="/planets/earth.html">Earth</a>
+ 			<a class="mars" href="/planets/mars.html">Mars</a>
+  			<a class="jupiter" href="/planets/jupiter.html">Jupiter</a>
+  			
+  			
+		</nav>
+
+
+
+		<a class="saturn" href="/planets/saturn.html"onclick="
+  const w=400,h=300;
+  const x=(screen.width-w)/2;
+  const y=(screen.height-h)/2;
+  window.open(
+    this.href,
+    'popup',
+    `width=${w},height=${h},left=${x},top=${y},scrollbars=yes,resizable=yes`
+  );
+  return false;
+">
+Open Saturn Info
+			 </a>
+
+
+		<nav class="solar">
+			<a class="uranus" href="/planets/uranus.html">Uranus</a>
+			<a class="neptune" href="/planets/neptune.html">Neptune</a>
+			<a class="pluto" href="/planets/pluto.html">Pluto</a>
 
 		</nav>
+
 	</header>
+
+	<script>
+	  (function(){
+	    const w = 400, h = 300;
+	    function openPopup(e){
+	      e.preventDefault();
+	      const href = this.getAttribute('href');
+	      const x = Math.max(0, Math.floor((screen.width - w) / 2));
+	      const y = Math.max(0, Math.floor((screen.height - h) / 2));
+	      window.open(href, 'popup', `width=${w},height=${h},left=${x},top=${y},scrollbars=yes,resizable=yes`);
+	    }
+	    document.querySelectorAll('header a[href^="/planets/"]').forEach(a=>{
+	      if (!a.getAttribute('onclick')) a.addEventListener('click', openPopup);
+	    });
+	  })();
+	</script>
+	<form action="https://formspree.io/f/xeoybzjn" method="POST" class="form">
+		<fieldset>
+			<legend>Send Feedback <span class="hello">give me your ideas here i will be glad to answer ":)" </span></legend>
+			<label> Your email:
+				<input type="email" name="email" required placeholder="you@domain.com">
+			</label>
+			<label>Your message:
+				<textarea name="message" required placeholder="Your thoughts..." rows="6"></textarea>
+			</label>
+			<button type="submit">Send</button>
+		</fieldset>
+	</form>
+
 
 
 
 	
 </body>
 </html>
-
-

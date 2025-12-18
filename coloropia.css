@@ -4,6 +4,9 @@
   text-align: center;
   margin: 120px 0;
 
+  /* ensure the title spans the full header width so planets wrap to the next line */
+  flex: 0 0 100%;
+
   background: url("gifs/stars\ texture.gif"); /* or .jpg */
   background-size: cover;
   background-clip: text;
@@ -47,6 +50,16 @@ footer {
   z-index: 1;
 }
 
+/* Center inline planet controls so separate navs and Saturn sit on one horizontal line */
+header {
+  display: flex;
+  flex-wrap: wrap; /* allow title on its own row */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}  
+
 .page-intro {
   display: block;
   width: 389px;
@@ -59,8 +72,168 @@ footer {
   padding: 0 0 20px;
   margin-top: 80px;
   text-align: center;
-}
+  order: 2; /* place below planets */
+  flex: 0 0 100%;
+} 
 div {
     display: block;
     unicode-bidi: isolate;
 }
+.welcome {
+    font-size: 1vw;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    margin: 0px 80px 80px 80px;
+    color: rgb(255, 255, 255);
+    order: 2; /* keep welcome below planets */
+    flex: 0 0 100%;
+}
+/*.saturn {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url("/gifs/planets/saturn.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}*/
+  .solar{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 20px; /* increased spacing between planets */
+  flex-wrap: nowrap; /* force single line */
+  padding: 8px 12px;
+  vertical-align: middle;
+  white-space: nowrap; /* keep all planet controls on a single line */
+  order: 1; /* place immediately after the title */
+} 
+
+.solar a{
+  display:inline-block;   /* important */
+  flex: 0 0 auto; /* prevent shrinking/wrapping */
+  width: 80px;
+  height:80px;
+  min-width: 64px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 12px; /* consistent spacing like Saturn */
+  vertical-align: middle;
+
+  /* Visually hide link text while keeping it available to assistive tech */
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 150ms ease;
+  transform-origin: center;
+} 
+
+
+/* sizes + colors */
+.mercury{background-image:url("gifs/planets/mercury.gif");}
+.venus{background-image:url("gifs/planets/venus.gif");}
+.earth{background-image:url("gifs/planets/earth.gif");}
+.mars{background-image:url("gifs/planets/mars.gif");}
+.jupiter{background-image:url("gifs/planets/jupiter.gif");}
+.saturn{
+  display: inline-block; /* sit inline with the two .solar navs */
+  vertical-align: middle;
+  background-image:url("gifs/planets/saturn.gif");
+  background-size: contain; /* Saturn uses contain only */
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* Make Saturn wider than tall so its rings fit without being clipped */
+  width: 144px;
+  height: 72px;
+  margin: 0 12px; /* add space on both sides */
+  order: 1; /* place immediately after the title */
+
+  /* Visually hide the link text while keeping it available to assistive tech */
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: transform 150ms ease;
+  transform-origin: center;
+} 
+.uranus{background-image:url("gifs/planets/uranus.gif");} 
+.neptune{background-image:url("gifs/planets/neptune.gif");}
+.pluto{background-image:url("gifs/planets/pluto.gif");}
+
+
+
+
+/* Contact form + pixel legend */
+.form{
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 16px;
+  border: 3px solid #00ff66; /* bright green theme */
+  background: rgba(0,0,0,0.36);
+  border-radius: 6px;
+  font-family: "Comic Sans MS", "VT323", sans-serif; /* comic font for form text */
+  color: #d6ffd6;
+}
+.form fieldset{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.form legend{
+  font-family: 'Press Start 2P', 'Comic Sans MS', monospace; /* pixel style */
+  font-size: 0.9rem;
+  color: #00ff66;
+  background: rgba(0,0,0,0.55);
+  padding: 6px 12px;
+  border: 3px solid #00ff66;
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 0 #000; /* blocky offset */
+  image-rendering: pixelated;
+}
+
+.form legend .hello{
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 0.75rem;
+  color: #caffd2;
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(0,255,102,0.18);
+  display: inline-block;
+  vertical-align: middle;
+}
+.form label{
+  display: block;
+  margin-bottom: 12px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.form input[type="email"],
+.form textarea{
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 2px solid #008b39;
+  color: #eaffea;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  resize: vertical;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.form button{
+  display: inline-block;
+  background: #00ff66;
+  border: 2px solid #00cc52;
+  color: #002200;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.form button:hover{transform: translateY(-2px);} 
+
+/* keep existing hover for planets */
+.solar a:hover{transform:scale(1.12);} .saturn:hover{transform:scale(1.12);}

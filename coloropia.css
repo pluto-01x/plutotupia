@@ -24,6 +24,7 @@
 }
 /* Page textured background using GIF from /gifs */
 body {
+  min-width:1200px;
   min-height: 100vh;
   background-image: url("gifs/background stars.gif") ;
   background-repeat: repeat; /* tile for texture */

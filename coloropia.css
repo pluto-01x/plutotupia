@@ -167,6 +167,17 @@ div {
 
 
 
+/* spotify small thumbnail in legend */
+.spotify-logo{
+  width:64px;
+  height:auto;
+  vertical-align:middle;
+  margin-left:8px;
+  border:2px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  image-rendering: optimizeQuality;
+}
+
 /* Contact form + pixel legend */
 .form{
   max-width: 640px;
@@ -238,3 +249,35 @@ div {
 
 /* keep existing hover for planets */
 .solar a:hover{transform:scale(1.12);} .saturn:hover{transform:scale(1.12);}
+
+.corner-box{
+  border: 2px solid #3cff3c;
+  border-radius: 8px;
+  padding: 20px;
+  width: 420px;
+  background: rgba(0,0,0,0.6);
+  color: #3cff3c;
+  font-family: monospace;
+}
+
+/* title bar */
+.corner-title{
+  border: 2px solid #3cff3c;
+  padding: 6px 12px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* about layout */
+.about-content{
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.pfp{
+  width: 80px;
+  height: 80px;
+  border: 2px solid #3cff3c;
+  image-rendering: pixelated;
+}
